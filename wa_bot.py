@@ -74,8 +74,8 @@ def bot():
                     pdf_text += page.extract_text()
                 
                 # Kirim ke AI
-                system_prompt = "Kamu adalah HRD expert. Analisis CV berikut dan berikan saran karir."
-                user_content = f"Ini isi CV nya:\n{pdf_text[:4000]}" # Potong biar gak overload
+                system_prompt = "Kamu adalah asisten, silahkan analisis dan jawab pertanyaan user berikut"
+                user_content = f"Ini isi pdf nya:\n{pdf_text[:4000]}" # Potong biar gak overload
                 
                 chat_completion = client.chat.completions.create(
                     messages=[
